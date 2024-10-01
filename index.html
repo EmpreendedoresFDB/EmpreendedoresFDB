@@ -3,9 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste</title>
+    <title>Tela de login</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: linear-gradient(to right, #148fdc, #113647);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .tela-login {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 55px;
+            border-radius: 15px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .input {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        input {
+            padding: 10px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid white;
+            outline: none;
+            color: white;
+            font-size: 16px;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+        .labelInput {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            pointer-events: none;
+            transition: 0.5s;
+            font-size: 16px;
+            color: white;
+        }
+        .inputUser:focus ~ .labelInput, .inputUser:valid ~ .labelInput {
+            top: -20px;
+            left: 0;
+            font-size: 12px;
+            color: dodgerblue;
+        }
+        button {
+            background-image: linear-gradient(to right, #370472, #820f91);
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 11px;
+            transition: background-image 0.5s;
+        }
+        button:hover {
+            background-image: linear-gradient(to right, #7216db, #c40bdc);
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="tela-login">
+        <h1>Login do Aluno</h1>
+        <form>
+            <div class="input">
+                <input type="text" class="inputUser" required>
+                <label class="labelInput">Email</label>
+            </div>
+            <div class="input">
+                <input type="password" class="inputUser" required>
+                <label class="labelInput">Senha</label>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
 </html>
+
