@@ -32,27 +32,44 @@
             <br>
 
                 <div class="inputBox">
-                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
-                    <label for="telefone" class="labelInput">Telefone</label>
+                    <input type="tel" name="codigo" id="codigo" class="inputUser" required>
+                    <label for="codigo" class="labelInput">Código de confirmação</label>
                     </div>
             
             <br>
             
 
             <input type="submit" name="submit" id="submit">
-                
-
-
-
-
-
-
-
-
-
+                    
             </fieldset>
         </form>
     </div>
+
+
+    <div class="popup" id="popup">
+        <p>Um e-mail foi submetido com o código de confirmação. Caso o e-mail não seja do domínio @faculdadedombosco.edu.br, não será possível realizar o cadastro.</p>
+        <button onclick="closePopup()">Fechar</button>
+    </div>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+            if (email.endsWith('@faculdadedombosco.edu.br')) {
+                document.getElementById('popup').style.display = 'block';
+            } else {
+                alert('O e-mail deve ser do domínio @faculdadedombosco.edu.br para realizar o cadastro.');
+            }
+        });
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
+
+
+
 
 </body>
 </html>

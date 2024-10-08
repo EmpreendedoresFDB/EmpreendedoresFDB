@@ -74,3 +74,33 @@ legend{
 #submit:hover{
     background-image: linear-gradient(to right, rgb(114, 22, 219), rgb(196, 11, 220));;
 }
+
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0); /* Preto sólido */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    z-index: 1000;
+}
+
+.popup button {
+background-color: dodgerblue;
+border: none;
+padding: 10px;
+color: white;
+cursor: pointer;
+border-radius: 5px;
+}
+
+#popup button:hover{
+background-image: linear-gradient(to right, rgb(114, 22, 219), rgb(196, 11, 220));;
+}
+
