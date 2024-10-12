@@ -1,9 +1,64 @@
-
-
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(to right, rgb(20,147,220), rgb(17, 54, 71));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to right, #148fdc, #113647);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
+
+.tela-login {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 55px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px; 
+}
+
+.header, .footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #FFF;
+    color: #111FFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-right: 30px; /* Adicionado para evitar corte na margem direita */
+    box-sizing: border-box;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.header-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.header-logo, .footer-logo {
+    height: 70px;
+    max-width: 150px; 
+    object-fit: contain; 
+}
+
 .box{
     color: white;
     position: absolute;
@@ -14,6 +69,23 @@ body{
     padding: 15px;
     border-radius: 15px;
     width: 33%;
+}
+
+.input {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+input {
+    padding: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    letter-spacing: 1px;
 }
 
 fieldset{
@@ -45,18 +117,21 @@ legend{
 
 }
 
-.labelInput{
-   position: absolute;
-    top: 0px;
-    left: 0px;
+.labelInput {
+    position: absolute;
+    top: 10px;
+    left: 10px;
     pointer-events: none;
-    transition: .5s;
+    transition: 0.5s;
+    font-size: 16px;
+    color: white;
 }
 
-.inputUser:focus ~ .labelInput, .inputUser:valid ~ .labelInput{
+.inputUser:focus ~ .labelInput, .inputUser:valid ~ .labelInput {
     top: -20px;
+    left: 0;
     font-size: 12px;
-    color:dodgerblue;
+    color: dodgerblue;
 }
 
 #submit{
@@ -104,3 +179,64 @@ border-radius: 5px;
 background-image: linear-gradient(to right, rgb(114, 22, 219), rgb(196, 11, 220));;
 }
 
+.btn-login {
+    background-image: linear-gradient(to right, #370472, #820f91);
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 11px;
+    transition: background-image 0.5s;
+    margin-top: 10px; 
+}
+
+.btn-login:hover {
+    background-image: linear-gradient(to right, #7216db, #c40bdc);
+}
+
+.btn-new-user {
+    background-image: linear-gradient(to right, #3399ff, #6ee2cd); /* Cores diferentes */
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 16px;    
+    cursor: pointer;
+    border-radius: 11px;
+    transition: background-image 0.5s;
+    margin-top: 10px; 
+
+}
+
+.btn-new-user:hover {
+    background-image: linear-gradient(to right, #3399ff, #0066cc); 
+}
+
+.btn-forgot-password {
+    background-image: linear-gradient(to right, #93b9e0, #077f17); 
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 11px;
+    transition: background-image 0.5s;
+    margin-top: 10px; 
+}
+
+.btn-forgot-password:hover {
+    background-image: linear-gradient(to right, #3399ff, #0066cc); /* Hover diferente */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; 
+}
+
+.button-group button {
+    width: 48%; 
+}
