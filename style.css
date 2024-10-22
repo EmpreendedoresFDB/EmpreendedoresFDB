@@ -1,12 +1,19 @@
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
     background-image: linear-gradient(to right, #148fdc, #113647);
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    padding-top: 120px; /* Espaço para o header */
+    padding-bottom: 100px; /* Espaço para o footer */
+}
+
+.tela-cadastro {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 .tela-login {
@@ -14,14 +21,17 @@ body{
     background-color: rgba(0, 0, 0, 0.8);
     padding: 55px;
     border-radius: 15px;
-    width: 300px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px; 
 }
 
 .header, .footer {
+    background-color: #fff;
+    color: #111FFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -30,26 +40,25 @@ body{
     background-color: #FFF;
     color: #111FFF;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    padding-right: 30px; /* Adicionado para evitar corte na margem direita */
+    padding-right: 30px;
     box-sizing: border-box;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ocupar o espaço total */
 }
 
 .header-title {
-    font-size: 30px;
+    flex-grow: 1; /* Faz o título ocupar o máximo de espaço possível */
+    text-align: center; /* Centraliza o título */
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -59,16 +68,53 @@ body{
     object-fit: contain; 
 }
 
-.box{
+.btn-area-aluno {
+    padding: 10px 20px;
+    background-color: #111FFF;
     color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-area-aluno:hover {
+    background-color: #0d0dff;
+}
+
+
+.header-content {
+    justify-content: space-between;
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header-logo, .footer-logo {
+    height: 70px;
+    max-width: 150px;
+}
+
+.btn-area-aluno {
+    background-color: #111FFF;
+    color: white;
+}
+
+
+.btn-area-aluno:hover {
+    background-color: #0d0dff;
+}
+.box {
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 15px;
-    border-radius: 15px;
-    width: 33%;
+    padding: 55px;
+    border-radius: 20px; /* Canto arredondado */
+    color: white;
+    width: 100%;
+    max-width: 500px;
+    margin: auto; /* Centralizado verticalmente */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .input {
@@ -149,8 +195,6 @@ legend{
 #submit:hover{
     background-image: linear-gradient(to right, rgb(114, 22, 219), rgb(196, 11, 220));;
 }
-
-
 
 .popup {
     display: none;
@@ -239,4 +283,56 @@ background-image: linear-gradient(to right, rgb(114, 22, 219), rgb(196, 11, 220)
 
 .button-group button {
     width: 48%; 
+}
+
+.input-group-text {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+
+.input-group input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white; /* Cor do texto */
+    font-size: 16px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.input-group input:focus {
+    box-shadow: none;
+    border-color: dodgerblue;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Cor do placeholder */
+}
+
+.btn-submit {
+    background-image: linear-gradient(to right, #370472, #820f91);
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 11px;
+    transition: background-image 0.5s;
+    width: 48%; /* Largura ajustada para alinhar com o botão voltar */
+}
+
+.btn-submit:hover {
+    background-image: linear-gradient(to right, #7216db, #c40bdc);
+}
+
+.btn-back {
+    background-image: linear-gradient(to right, #93b9e0, #077f17);
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 11px;
+    transition: background-image 0.5s;
+    width: 48%; /* Largura ajustada para alinhar com o botão cadastrar */
 }
