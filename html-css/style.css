@@ -1,14 +1,19 @@
+:root{
+    --cor-background-hf: white;
+    --cor-background0: #148fdc;
+    --cor-background1: #113647;
+    --cor-conteudo: #111FFF;
+}
+
 body {
-    background-image: linear-gradient(to right, #148fdc, #113647);
+    background-image: linear-gradient(to right, var(--cor-background0), var(--cor-background1));
     height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 120px; /* Espaço para o header */
-    padding-bottom: 100px; /* Espaço para o footer */
 }
 
 .tela-cadastro {
-    color: white;
+    color: var(--cor-background-hf);
     background-color: rgba(0, 0, 0, 0.8);
     padding: 30px;
     border-radius: 15px;
@@ -17,7 +22,7 @@ body {
 }
 
 .tela-login {
-    color: white;
+    color: var(--cor-background-hf);
     background-color: rgba(0, 0, 0, 0.8);
     padding: 55px;
     border-radius: 15px;
@@ -26,8 +31,8 @@ body {
 }
 
 .header, .footer {
-    background-color: #fff;
-    color: #111FFF;
+    background-color: var(--cor-background-hf);
+    color: var(--cor-conteudo);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -37,13 +42,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #FFF;
-    color: #111FFF;
+    background-color: --cor-background-hf;
+    color: var(--cor-conteudo);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     padding-right: 30px;
     box-sizing: border-box;
 }
@@ -52,7 +53,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%; /* Ocupar o espaço total */
+    width: 100%;
 }
 
 .header-title {
@@ -62,15 +63,9 @@ body {
     font-weight: bold;
 }
 
-.header-logo, .footer-logo {
-    height: 70px;
-    max-width: 150px; 
-    object-fit: contain; 
-}
-
 .btn-area-aluno {
     padding: 10px 20px;
-    background-color: #111FFF;
+    background-color: var(--cor-conteudo);
     color: white;
     border: none;
     border-radius: 5px;
@@ -79,7 +74,7 @@ body {
 }
 
 .btn-area-aluno:hover {
-    background-color: #0d0dff;
+    padding: 10px 20px;
 }
 
 
@@ -94,7 +89,8 @@ body {
 
 .header-logo, .footer-logo {
     height: 70px;
-    max-width: 150px;
+    max-width: 150px; 
+    object-fit: contain; 
 }
 
 .btn-area-aluno {

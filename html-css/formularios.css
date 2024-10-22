@@ -1,0 +1,17 @@
+.formulario-cadastro {
+    color: var(--cor-background-hf);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.formulario-login {
+    color: var(--cor-background-hf);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 55px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
