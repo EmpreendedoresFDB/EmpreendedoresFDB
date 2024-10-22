@@ -72,35 +72,8 @@
         background-image: linear-gradient(to right, #7216db, #c40bdc);
     }
 </style>
-</head>
-<body>
-<div class="tela-login">
-    <h1>Cadastre sua senha:</h1>
-    <form>
-        <div class="input">
-            <input type="password" class="inputUser" required>
-            <label class="labelInput">Senha</label>
-        </div>
-        <div class="input">
-            <input type="password" class="inputUser" required>
-            <label class="labelInput">Confirmar Senha</label>
-        </div>
-        <button type="submit">Confirmar</button>
-    </form>
-</div>
 
-
-  <script>
-        function validarSenhas() {
-            var senha = document.getElementById("senha").value;
-            var confirmarSenha = document.getElementById("confirmarSenha").value;
-            if (senha !== confirmarSenha) {
-                alert("As senhas não coincidem. Por favor, tente novamente.");
-                return false;
-            }
-            return true;
-        }
-    </script>
+  
 </head>
 <body>
     <div class="tela-login">
@@ -117,10 +90,17 @@
             <button type="submit">Confirmar</button>
         </form>
     </div>
-</body>
-</html>
-
-
-
+    
+    <script>
+        function validarSenhas() {
+            var senha = document.getElementById("senha").value;
+            var confirmarSenha = document.getElementById("confirmarSenha").value;
+            if (senha !== confirmarSenha) {
+                alert("As senhas não coincidem. Por favor, tente novamente.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
