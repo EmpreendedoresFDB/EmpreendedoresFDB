@@ -89,5 +89,38 @@
     </form>
 </div>
 
+
+  <script>
+        function validarSenhas() {
+            var senha = document.getElementById("senha").value;
+            var confirmarSenha = document.getElementById("confirmarSenha").value;
+            if (senha !== confirmarSenha) {
+                alert("As senhas não coincidem. Por favor, tente novamente.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="tela-login">
+        <h1>Cadastre sua senha:</h1>
+        <form onsubmit="return validarSenhas()" method="POST" action="processar_senha.php">
+            <div class="input">
+                <input type="password" id="senha" name="senha" class="inputUser" required>
+                <label class="labelInput">Senha</label>
+            </div>
+            <div class="input">
+                <input type="password" id="confirmarSenha" class="inputUser" required>
+                <label class="labelInput">Confirmar Senha</label>
+            </div>
+            <button type="submit">Confirmar</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
 </body>
 </html>
