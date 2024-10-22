@@ -1,0 +1,13 @@
+.btn-area-aluno {
+    padding: 10px 20px;
+    background-color: var(--cor-conteudo);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-area-aluno:hover {
+    background-color: var(--cor-hover-conteudo);
+}

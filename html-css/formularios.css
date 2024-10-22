@@ -1,17 +1,204 @@
+/* CADASTRO */
 .formulario-cadastro {
     color: var(--cor-background-hf);
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 30px;
+    padding: 20px 50px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
+.btn-submit {
+    background-image: linear-gradient(to right, #370472, #820f91);
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 11px;
+    transition: background-image 0.5s;
+    width: 48%; /* Largura ajustada para alinhar com o botão voltar */
+}
+
+.btn-submit:hover {
+    background-image: linear-gradient(to right, #7216db, #c40bdc);
+}
+
+.btn-back {
+    background-image: linear-gradient(to right, #93b9e0, #077f17);
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 11px;
+    transition: background-image 0.5s;
+    width: 48%; /* Largura ajustada para alinhar com o botão cadastrar */
+}
+
+/* LOGIN */
 .formulario-login {
     color: var(--cor-background-hf);
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 55px;
+    padding: 20px 50px;
+    margin: 30px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
+}
+
+.btn-login {
+    background-image: linear-gradient(to right, #370472, #820f91);
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 11px;
+    transition: background-image 0.5s;
+    margin-top: 10px; 
+}
+
+.btn-login:hover {
+    background-image: linear-gradient(to right, #7216db, #c40bdc);
+}
+
+.btn-new-user {
+    background-image: linear-gradient(to right, #3399ff, #6ee2cd); /* Cores diferentes */
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 16px;    
+    cursor: pointer;
+    border-radius: 11px;
+    transition: background-image 0.5s;
+    margin-top: 10px; 
+
+}
+
+.btn-new-user:hover {
+    background-image: linear-gradient(to right, #3399ff, #0066cc); 
+}
+
+.btn-forgot-password {
+    background-image: linear-gradient(to right, #93b9e0, #077f17); 
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 11px;
+    transition: background-image 0.5s;
+    margin-top: 10px; 
+}
+
+.btn-forgot-password:hover {
+    background-image: linear-gradient(to right, #3399ff, #0066cc); /* Hover diferente */
+}
+
+/*AMBOS*/
+
+fieldset{
+    border: 3px solid dodgerblue;
+}
+
+legend{
+    border: 1px solid dodgerblue;
+    padding: 15px;
+    text-align: center;
+    background-color: dodgerblue;
+    border-radius: 9px;
+}
+
+.input {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+input {
+    padding: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.input-group-text {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.input-group input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white; /* Cor do texto */
+    font-size: 16px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.input-group input:focus {
+    box-shadow: none;
+    border-color: dodgerblue;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Cor do placeholder */
+}
+
+.inputBox{
+    position: relative;
+
+}
+
+.inputUser{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    letter-spacing: 2px;
+
+}
+
+.labelInput {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    pointer-events: none;
+    transition: 0.5s;
+    font-size: 16px;
+    color: white;
+}
+
+.inputUser:focus ~ .labelInput, .inputUser:valid ~ .labelInput {
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+    color: dodgerblue;
+}
+
+#submit{
+    background-image: linear-gradient(to right, rgb(55, 4, 114), rgb(130, 15, 145));
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 11px;
+
+}
+
+#submit:hover{
+    background-image: linear-gradient(to right, rgb(114, 22, 219), rgb(196, 11, 220));;
 }
