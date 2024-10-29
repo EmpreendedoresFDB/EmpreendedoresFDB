@@ -36,3 +36,21 @@ main{
     color: var(--cor-conteudo);
 }
 
+
+.card {
+    width: 100%; /* Usa toda a largura da coluna */
+    max-width: 350px; /* Define uma largura máxima para o card */
+    min-height: 800px; /* Define uma altura mínima */
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px; /* Define a altura da imagem */
+    object-fit: cover; /* Ajusta a imagem ao card */
+}
+
+.card-body {
+    padding: 20px; /* Aumenta o padding dentro do card */
+}
