@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         echo "<script>
                 alert('Cadastro realizado com sucesso!');
-                window.location.href = 'areaAluno.html';
+                window.location.href = '../html-css/areaAluno.html';
               </script>";
     }
 }

@@ -24,21 +24,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($hash);
         $stmt->fetch();
-    
         
         if (verificarSenha($senha, $hash)) {
-            $_SESSION['usuario_logado'] = $email;
+            $_SESSION['email'] = $email;
             echo "<script>
-                    window.location.href = 'home.html';
+                    window.location.href = 'home.php';
                 </script>";
         } else {
             echo "<script>
                     alert('Senha incorreta. Tente novamente.');
                 </script>";
         }
-    }    
+    } else {
+        echo "<script>
+                alert('Usuário não encontrado.');
+            </script>";
+    }
 
     $stmt->close();
 }
 ?>
-
