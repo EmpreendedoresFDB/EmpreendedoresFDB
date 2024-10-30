@@ -52,16 +52,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               </script>";
     }
 }
-
-
-if ($resultadoUsuario && mysqli_num_rows($resultadoUsuario) > 0) {
-    // Exibe cada empreendimento em um card
-    while ($row = mysqli_fetch_assoc($resultadoUsuario)) {
-        $nome = $row['nome_empreendimento'];
-        $descricao = $row['descricao_empreendimento'];
-        $telefone = $row['telefone_empreendimento'];
-        $foto = !empty($row['foto_empreendimento']) ? $row['foto_empreendimento'];
-?>
-
-
 ?>

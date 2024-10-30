@@ -15,7 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match('/@faculdadedombosco\.edu\.br$/', $email)) {
         echo "<script>
                 alert('O e-mail deve ser do domínio @faculdadedombosco.edu.br para realizar o cadastro.');
-                window.location.href = 'novoUsuario.html';
+                window.location.href = '../html-css/novoUsuario.html';
+              </script>";
+    }
+    elseif(!preg_match('/^(1[5-9]|[2-9][0-9])\d{6}/', $email)){
+        echo "<script>
+                alert('O e-mail deve conter sua matrícula para realizar o cadastro.');
+                window.location.href = '../html-css/novoUsuario.html';
               </script>";
     }
     elseif ($senha !== $repetir_senha) {
