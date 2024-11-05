@@ -33,11 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "<script>
                     alert('Senha incorreta. Tente novamente.');
+                    window.location.href = '../html-css/areaAluno.html';
                 </script>";
         }
     } else {
         echo "<script>
                 alert('Usuário não encontrado.');
+                window.location.href = '../html-css/areaAluno.html';
             </script>";
     }
 

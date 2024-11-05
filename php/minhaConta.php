@@ -1,6 +1,7 @@
 <?php
     session_start();
     include "conn.php";
+    include "formatadorTelefone.php";
 
     $sql = "SELECT nome, email, telefone FROM usuario WHERE email = '" . $_SESSION['email'] . "' ";
     $resultadoConsulta = mysqli_query($conn, $sql);
@@ -10,6 +11,7 @@
         $nome = $row["nome"];
         $email = $row["email"];
         $telefone = $row["telefone"];
+        $telefone = formatadorTelefone::formatarParaDisplay($telefone);
     } else {
         echo "Nenhuma informação encontrada para este usuário.";
         exit();

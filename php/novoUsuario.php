@@ -1,5 +1,6 @@
 <?php
 include "conn.php";
+include "formatadorTelefone.php";
 function criptografarSenha($senha) {
     return password_hash($senha, PASSWORD_BCRYPT);
 }
@@ -24,6 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 window.location.href = '../html-css/novoUsuario.html';
               </script>";
     }
+    elseif(!preg_match('/^\d{2} 9\d{4}-?\d{4}$/', $telefone)){
+        echo "<script>
+                alert('O telefone deve seguir o padrão xx 9xxxx-xxxx.');
+                window.location.href = '../html-css/novousuario.html';
+              </script>";
+    }
     elseif ($senha !== $repetir_senha) {
         echo "<script>
                 alert('As senhas não coincidem. Por favor, verifique.');
@@ -31,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               </script>";
     }
     else {
+        $telefone = formatadorTelefone::formatarParaBanco($telefone);
         $senhaCriptografada = criptografarSenha($senha);
         $sql = "INSERT INTO usuario (nome, email, telefone, hashs, tipo)
                 VALUES ('$nome', '$email', '$telefone', '$senhaCriptografada', '0')";

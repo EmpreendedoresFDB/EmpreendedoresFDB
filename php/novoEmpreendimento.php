@@ -1,5 +1,6 @@
 <?php
 include "conn.php";
+//include "formatadorTelefone.php"; -- precisa ser incluído ainda
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -32,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     }
-
+    //$telefone_empreendimento = formatadorTelefone::formatarParaBanco($telefone_empreendimento);
     $sql = "INSERT INTO empreendimento (nome_empreendimento, descricao_empreendimento, telefone_empreendimento, foto_empreendimento, avaliacao, id_usuario) 
             VALUES ('$nome_empreendimento', '$descricao_empreendimento', '$telefone_empreendimento', '$nome_arquivo', '0', $id_usuario)";
     
