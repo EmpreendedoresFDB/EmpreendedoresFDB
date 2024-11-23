@@ -46,6 +46,8 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     <link href="../html-css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../html-css/home.css">
     <link rel="stylesheet" href="../html-css/formularios.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 </head>
 <body>
     <header class="header">
@@ -66,7 +68,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     <textarea name="descricao_empreendimento" class="form-control" placeholder="Descrição do Empreendimento" required><?php echo $descricao_empreendimento; ?></textarea>
                 </div>
                 <div class="mb-3 input-group">
-                    <input type="tel" name="telefone_empreendimento" class="form-control" placeholder="Telefone do Empreendimento" value="<?php echo $telefone_empreendimento; ?>" required>
+                    <input type="tel" id="telefone_empreendimento" name="telefone_empreendimento" class="form-control" placeholder="Telefone do Empreendimento" value="<?php echo $telefone_empreendimento; ?>" required>
                 </div>
                 <button type="button" class="btn-back mb-3" onclick="window.location.href='home.php'">Voltar</button>
                 <button type="submit" class="btn-submit mb-3">Salvar Alterações</button>
@@ -79,6 +81,11 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         </div>
     </footer>
 </body>
+<script>    
+    $(document).ready(function () {
+        $('#telefone_empreendimento').mask('(00) 00000-0000');
+    });
+ </script>
 </html>
 <?php
 mysqli_close($conn);

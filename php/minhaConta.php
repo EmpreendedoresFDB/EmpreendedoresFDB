@@ -27,6 +27,8 @@
         <link href="../html-css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="../html-css/home.css">
         <link rel="stylesheet" href="../html-css/formularios.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     </head>
     <body>
         <header class="header">
@@ -46,7 +48,7 @@
                         <input type="text" name="nome" class="form-control" placeholder="<?php echo $nome; ?>" required>
                     </div>
                     <div class="mb-3 input-group">
-                        <input type="tel" name="telefone" class="form-control" placeholder="<?php echo $telefone; ?>" required>
+                        <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="<?php echo $telefone; ?>" required>
                     </div>
                     <div class="form-group">
                         <input type="password" name="senha" class="form-control" placeholder="Confirma Senha" required>
@@ -65,6 +67,11 @@
             </div>
         </footer>
     </body>
+    <script>    
+    $(document).ready(function () {
+            $('#telefone').mask('(00) 00000-0000');
+        });
+    </script>
 </html>
 <?php
 mysqli_close($conn);

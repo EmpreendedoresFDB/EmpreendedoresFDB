@@ -1,6 +1,8 @@
 <?php
     session_start();
     include "conn.php";
+    include "formatadorTelefone.php";
+
     function criptografarSenha($senha) {
         return password_hash($senha, PASSWORD_BCRYPT);
     }
@@ -19,6 +21,7 @@
         }
         else {
             $senhaCriptografada = criptografarSenha($senha);
+            $telefone_empreendimento = formatadorTelefone::formatarParaBanco($telefone_empreendimento);
             $sql = "UPDATE usuario SET nome = '$nome', telefone = '$telefone', hashs = '$senhaCriptografada' WHERE email = '" . $_SESSION['email'] . "' ";
 
             mysqli_query($conn,$sql);

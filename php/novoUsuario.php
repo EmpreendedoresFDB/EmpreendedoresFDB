@@ -18,37 +18,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 alert('O e-mail deve ser do domínio @faculdadedombosco.edu.br para realizar o cadastro.');
                 window.location.href = '../html-css/novoUsuario.html';
               </script>";
-    }
-    elseif(!preg_match('/^(1[5-9]|[2-9][0-9])\d{6}/', $email)){
+    } 
+    elseif (!preg_match('/^(1[5-9]|[2-9][0-9])\d{6}/', $email)) {
         echo "<script>
                 alert('O e-mail deve conter sua matrícula para realizar o cadastro.');
                 window.location.href = '../html-css/novoUsuario.html';
               </script>";
-    }
-    elseif(!preg_match('/^\d{2} 9\d{4}-?\d{4}$/', $telefone)){
-        echo "<script>
-                alert('O telefone deve seguir o padrão xx 9xxxx-xxxx.');
-                window.location.href = '../html-css/novousuario.html';
-              </script>";
-    }
+    } 
     elseif ($senha !== $repetir_senha) {
         echo "<script>
                 alert('As senhas não coincidem. Por favor, verifique.');
-                window.location.href = 'novoUsuario.html';
+                window.location.href = '../html-css/novoUsuario.html';
               </script>";
-    }
+    } 
     else {
-        $telefone = formatadorTelefone::formatarParaBanco($telefone);
-        $senhaCriptografada = criptografarSenha($senha);
-        $sql = "INSERT INTO usuario (nome, email, telefone, hashs, tipo)
-                VALUES ('$nome', '$email', '$telefone', '$senhaCriptografada', '0')";
-        
-        mysqli_query($conn,$sql);
+        $sqlCheckEmail = "SELECT id_usuario FROM usuario WHERE email = '$email'";
+        $resultadoCheckEmail = mysqli_query($conn, $sqlCheckEmail);
 
-        echo "<script>
-                alert('Cadastro realizado com sucesso!');
-                window.location.href = '../html-css/areaAluno.html';
-              </script>";
+        if (mysqli_num_rows($resultadoCheckEmail) > 0) {
+            echo "<script>
+                    alert('Número de matrícula já está cadastrada!');
+                    window.location.href = '../html-css/novoUsuario.html';
+                  </script>";
+        } 
+        else {
+            $senhaCriptografada = criptografarSenha($senha);
+            $telefone = formatadorTelefone::formatarParaBanco($telefone);
+            $sql = "INSERT INTO usuario (nome, email, telefone, hashs, tipo)
+                    VALUES ('$nome', '$email', '$telefone', '$senhaCriptografada', '0')";
+            
+            if (mysqli_query($conn, $sql)) {
+                echo "<script>
+                        alert('Cadastro realizado com sucesso!');
+                        window.location.href = '../html-css/areaAluno.html';
+                      </script>";
+            } else {
+                echo "<script>
+                        alert('Erro ao cadastrar. Por favor, tente novamente.');
+                        window.location.href = '../html-css/novoUsuario.html';
+                      </script>";
+            }
+        }
     }
 }
 ?>

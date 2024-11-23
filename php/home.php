@@ -64,11 +64,20 @@ $resultadoEmpreendimentos = mysqli_query($conn, $sqlEmpreendimentos);
                                     <td><?php echo $rowEmpreendimento['telefone_empreendimento']; ?></td>
                                     <td>
                                         <div class="d-flex justify-content-center align-items-center">
+                                            <a href="javascript:void(0);" class="mx-2" 
+                                                onclick="window.open('visualizaEmpreendimento.php?id_empreendimento=<?php echo $rowEmpreendimento['id_empreendimento']; ?>', 
+                                                                    '_blank', 
+                                                                    'width=800,height=600,scrollbars=yes,resizable=yes');">
+                                                <img src="../html-css/img/visualizar.png" alt="Visualizar" width="24" height="24">
+                                                <p>Visualizar</p>
+                                            </a>
                                             <a href="editaEmpreendimento.php?id=<?php echo $rowEmpreendimento['id_empreendimento']; ?>" class="mx-2">
                                                 <img src="../html-css/img/editar.png" alt="Editar" width="24" height="24">
+                                                <p>Editar</p>
                                             </a>
                                             <a href="excluiEmpreendimento.php?id=<?php echo $rowEmpreendimento['id_empreendimento']; ?>" onclick="return confirm('Tem certeza que deseja excluir este empreendimento?');" class="mx-2">
                                                 <img src="../html-css/img/excluir.png" alt="Excluir" width="24" height="24">
+                                                <p>Excluir</p>   
                                             </a>
                                         </div>
                                     </td>

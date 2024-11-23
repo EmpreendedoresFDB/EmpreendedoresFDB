@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "conn.php";
+include "formatadorTelefone.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['id_empreendimento'], $_POST['nome_empreendimento'], $_POST['descricao_empreendimento'], $_POST['telefone_empreendimento'])) {
@@ -21,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $resultadoEmpreendimento = mysqli_query($conn, $sqlEmpreendimento);
 
             if ($resultadoEmpreendimento && mysqli_num_rows($resultadoEmpreendimento) > 0) {
+                $telefone_empreendimento = formatadorTelefone::formatarParaBanco($telefone_empreendimento);
                 $sqlUpdate = "UPDATE empreendimento 
                               SET nome_empreendimento = '$nome_empreendimento', descricao_empreendimento = '$descricao_empreendimento', telefone_empreendimento = '$telefone_empreendimento' 
                               WHERE id_empreendimento = $id_empreendimento AND id_usuario = $id_usuario";
