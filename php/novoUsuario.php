@@ -13,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $repetir_senha = $_POST['repetir_senha'];
     $tipo = 0;
 
+    $charVerificaTelefone = substr(formatadorTelefone::formatarParaBanco($telefone), 2, 1);
+
     if (!preg_match('/@faculdadedombosco\.edu\.br$/', $email)) {
         echo "<script>
                 alert('O e-mail deve ser do domínio @faculdadedombosco.edu.br para realizar o cadastro.');
@@ -30,7 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 alert('As senhas não coincidem. Por favor, verifique.');
                 window.location.href = '../html-css/novoUsuario.html';
               </script>";
-    } 
+    }elseif($charVerificaTelefone !== '9'){
+        echo "<script>
+                alert('O primeiro digito do telefone deve ser 9. Por favor, verifique.');
+                window.location.href = '../html-css/novoUsuario.html';
+              </script>";
+    }
     else {
         $sqlCheckEmail = "SELECT id_usuario FROM usuario WHERE email = '$email'";
         $resultadoCheckEmail = mysqli_query($conn, $sqlCheckEmail);
